@@ -752,8 +752,18 @@ textarea:focus-visible {
 }
 
 .menu-card .image-credit {
-  margin-top: auto;
-  text-align: left;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: rgba(117, 107, 98, 0.72);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.menu-card .image-credit a {
+  color: rgba(116, 52, 31, 0.8);
+  font-weight: 700;
 }
 
 .menu-image {
