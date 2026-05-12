@@ -1,23 +1,42 @@
+import heroImage from "./assets/images/hero.jpg";
+
 function loadHome() {
   const content = document.getElementById("content");
 
   const heroSection = document.createElement("section");
   heroSection.classList.add("hero");
 
+  const leftContent = document.createElement("div");
+  leftContent.classList.add("hero-text");
+
   const heading = document.createElement("h2");
-  heading.textContent = "Welcome to Bili-Bili Bistro";
+  heading.textContent = "Bold Flavours. Elegant Dining.";
 
   const paragraph = document.createElement("p");
   paragraph.textContent =
-    "Experience the best of culinary delights in a cozy and inviting atmosphere. Our menu features a fusion of flavors that will tantalize your taste buds. Join us for an unforgettable dining experience!";
+    "Welcome to Bili-Bili Bistro, where modern cuisine meets unforgettable experiences. Enjoy handcrafted dishes, premium ingredients, and warm hospitality.";
 
   const button = document.createElement("button");
-  button.textContent = "View Menu";
-  button.classList.add("menu-button");
+  button.textContent = "Explore Menu";
+  button.classList.add("hero-btn");
 
-  heroSection.appendChild(heading);
-  heroSection.appendChild(paragraph);
-  heroSection.appendChild(button);
+  leftContent.appendChild(heading);
+  leftContent.appendChild(paragraph);
+  leftContent.appendChild(button);
+
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("hero-image");
+
+  const image = document.createElement("img");
+
+  image.src = heroImage;
+
+  image.alt = "Table set with delicious food and drinks";
+
+  imageContainer.appendChild(image);
+
+  heroSection.appendChild(leftContent);
+  heroSection.appendChild(imageContainer);
 
   content.appendChild(heroSection);
 }
