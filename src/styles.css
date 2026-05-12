@@ -407,6 +407,43 @@ body {
   font-size: 1rem;
 }
 
+.site-footer {
+  padding: 0 clamp(1rem, 5vw, 4rem) 2rem;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-brand {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.site-footer a {
+  color: var(--clay);
+  font-weight: 800;
+  text-decoration: none;
+  text-underline-offset: 0.25rem;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--clay-dark);
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .navbar {
     flex-direction: column;
@@ -488,5 +525,10 @@ body {
 
   .contact-section {
     padding: 1.3rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
