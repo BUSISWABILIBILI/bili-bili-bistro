@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   homeBtn.addEventListener("click", () => {
     clearContent();
     loadHome();
+    attachHomeButtonEvent();
     setActiveButton(homeBtn);
   });
 
@@ -42,6 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveButton(contactBtn);
   });
 
+  function attachHomeButtonEvent() {
+    const exploreMenuBtn = document.getElementById("explore-menu-btn");
+
+    if (exploreMenuBtn) {
+      exploreMenuBtn.addEventListener("click", () => {
+        clearContent();
+        loadMenu();
+        setActiveButton(menuBtn);
+      });
+    }
+  }
+
   loadHome();
+  attachHomeButtonEvent();
   setActiveButton(homeBtn);
 });

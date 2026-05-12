@@ -19,6 +19,7 @@ function loadHome() {
   const button = document.createElement("button");
   button.textContent = "Explore Menu";
   button.classList.add("hero-btn");
+  button.id = "explore-menu-btn";
 
   leftContent.appendChild(heading);
   leftContent.appendChild(paragraph);
