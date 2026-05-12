@@ -9,8 +9,17 @@ function loadMenu() {
   const menuSection = document.createElement("section");
   menuSection.classList.add("menu-section");
 
+  const eyebrow = document.createElement("p");
+  eyebrow.classList.add("eyebrow");
+  eyebrow.textContent = "House favourites";
+
   const heading = document.createElement("h2");
-  heading.textContent = "Our Menu";
+  heading.textContent = "A compact menu with big flavour.";
+
+  const intro = document.createElement("p");
+  intro.classList.add("section-intro");
+  intro.textContent =
+    "A focused selection of bistro comforts, grilled signatures, and a dessert worth saving room for.";
 
   const menuGrid = document.createElement("div");
   menuGrid.classList.add("menu-grid");
@@ -20,6 +29,7 @@ function loadMenu() {
       name: "Bili-Bili Flame Grilled Chicken",
       price: "R145",
       image: chickenImage,
+      tag: "Signature",
       description:
         "Tender grilled chicken served with spicy house sauce and golden fries.",
       credit:
@@ -29,6 +39,7 @@ function loadMenu() {
       name: "Creamy Garlic Pasta",
       price: "R120",
       image: pastaImage,
+      tag: "Vegetarian",
       description:
         "Pasta tossed in a rich garlic cream sauce with fresh herbs.",
       credit:
@@ -38,6 +49,7 @@ function loadMenu() {
       name: "Heritage Beef Burger",
       price: "R135",
       image: burgerImage,
+      tag: "Popular",
       description:
         "Juicy beef burger with caramelized onions, cheese, and bistro sauce.",
       credit:
@@ -47,6 +59,7 @@ function loadMenu() {
       name: "Golden Waffle Dessert",
       price: "R85",
       image: dessertImage,
+      tag: "Sweet",
       description:
         "Warm waffle topped with ice cream, syrup, and seasonal berries.",
       credit:
@@ -65,29 +78,46 @@ function loadMenu() {
 
     card.appendChild(itemImage);
 
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("menu-card-body");
+
+    const itemHeader = document.createElement("div");
+    itemHeader.classList.add("menu-card-header");
+
     const itemName = document.createElement("h3");
     itemName.textContent = item.name;
 
     const itemPrice = document.createElement("span");
     itemPrice.textContent = item.price;
+    itemPrice.classList.add("price");
+
+    itemHeader.appendChild(itemName);
+    itemHeader.appendChild(itemPrice);
+
+    const itemTag = document.createElement("p");
+    itemTag.classList.add("menu-tag");
+    itemTag.textContent = item.tag;
 
     const itemDescription = document.createElement("p");
     itemDescription.textContent = item.description;
 
-    card.appendChild(itemName);
-    card.appendChild(itemPrice);
-    card.appendChild(itemDescription);
+    cardBody.appendChild(itemHeader);
+    cardBody.appendChild(itemTag);
+    cardBody.appendChild(itemDescription);
 
     const imageCredit = document.createElement("p");
     imageCredit.classList.add("image-credit");
     imageCredit.innerHTML = item.credit;
 
-    card.appendChild(imageCredit);
+    cardBody.appendChild(imageCredit);
+    card.appendChild(cardBody);
 
     menuGrid.appendChild(card);
   });
 
+  menuSection.appendChild(eyebrow);
   menuSection.appendChild(heading);
+  menuSection.appendChild(intro);
   menuSection.appendChild(menuGrid);
 
   content.appendChild(menuSection);
