@@ -38,7 +38,7 @@ function loadHome() {
   const credit = document.createElement("p");
   credit.classList.add("image-credit");
   credit.innerHTML =
-    'Photo by <a href="https://unsplash.com/photos/cooked-food-on-stainless-steel-plate-XgCI2ExTr9I" target="_blank">Emma Houghton</a> on Unsplash';
+    'Photo by <a href="https://unsplash.com/@madebyswish" target="_blank">Emma Houghton</a> on Unsplash';
 
   imageContainer.appendChild(credit);
 

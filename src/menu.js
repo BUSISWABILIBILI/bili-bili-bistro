@@ -22,6 +22,8 @@ function loadMenu() {
       image: chickenImage,
       description:
         "Tender grilled chicken served with spicy house sauce and golden fries.",
+      credit:
+        'Photo by <a href="https://unsplash.com/@omarhakeem" target="_blank">Omar Hakeem</a> on Unsplash',
     },
     {
       name: "Creamy Garlic Pasta",
@@ -29,6 +31,8 @@ function loadMenu() {
       image: pastaImage,
       description:
         "Pasta tossed in a rich garlic cream sauce with fresh herbs.",
+      credit:
+        'Photo by <a href="https://unsplash.com/photos/pasta-dish-on-white-ceramic-bowl-wTBGTwHlf0c" target="_blank">Sama Hosseini</a> on Unsplash',
     },
     {
       name: "Heritage Beef Burger",
@@ -36,6 +40,8 @@ function loadMenu() {
       image: burgerImage,
       description:
         "Juicy beef burger with caramelized onions, cheese, and bistro sauce.",
+      credit:
+        'Photo by <a href="https://unsplash.com/@amir_v_ali" target="_blank">amirali mirhashemian</a> on Unsplash',
     },
     {
       name: "Golden Waffle Dessert",
@@ -43,6 +49,8 @@ function loadMenu() {
       image: dessertImage,
       description:
         "Warm waffle topped with ice cream, syrup, and seasonal berries.",
+      credit:
+        'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on Unsplash',
     },
   ];
 
