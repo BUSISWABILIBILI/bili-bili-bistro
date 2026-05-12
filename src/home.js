@@ -35,6 +35,13 @@ function loadHome() {
 
   imageContainer.appendChild(image);
 
+  const credit = document.createElement("p");
+  credit.classList.add("image-credit");
+  credit.innerHTML =
+    'Photo by <a href="https://unsplash.com/photos/cooked-food-on-stainless-steel-plate-XgCI2ExTr9I" target="_blank">Emma Houghton</a> on Unsplash';
+
+  imageContainer.appendChild(credit);
+
   heroSection.appendChild(leftContent);
   heroSection.appendChild(imageContainer);
 
