@@ -1,3 +1,8 @@
+import chickenImage from "./assets/images/chicken.jpg";
+import pastaImage from "./assets/images/pasta.jpg";
+import burgerImage from "./assets/images/burger.jpg";
+import dessertImage from "./assets/images/dessert.jpg";
+
 function loadMenu() {
   const content = document.getElementById("content");
 
@@ -14,24 +19,28 @@ function loadMenu() {
     {
       name: "Bili-Bili Flame Grilled Chicken",
       price: "R145",
+      image: chickenImage,
       description:
         "Tender grilled chicken served with spicy house sauce and golden fries.",
     },
     {
       name: "Creamy Garlic Pasta",
       price: "R120",
+      image: pastaImage,
       description:
         "Pasta tossed in a rich garlic cream sauce with fresh herbs.",
     },
     {
       name: "Heritage Beef Burger",
       price: "R135",
+      image: burgerImage,
       description:
         "Juicy beef burger with caramelized onions, cheese, and bistro sauce.",
     },
     {
       name: "Golden Waffle Dessert",
       price: "R85",
+      image: dessertImage,
       description:
         "Warm waffle topped with ice cream, syrup, and seasonal berries.",
     },
@@ -40,6 +49,13 @@ function loadMenu() {
   menuItems.forEach((item) => {
     const card = document.createElement("div");
     card.classList.add("menu-card");
+
+    const itemImage = document.createElement("img");
+    itemImage.src = item.image;
+    itemImage.alt = item.name;
+    itemImage.classList.add("menu-image");
+
+    card.appendChild(itemImage);
 
     const itemName = document.createElement("h3");
     itemName.textContent = item.name;
