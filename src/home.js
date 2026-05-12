@@ -64,6 +64,8 @@ function loadHome() {
   image.src = heroImage;
 
   image.alt = "Table set with delicious food and drinks";
+  image.decoding = "async";
+  image.fetchPriority = "high";
 
   imageContainer.appendChild(image);
 
@@ -131,7 +133,7 @@ function loadHome() {
     const article = document.createElement("article");
     article.classList.add("signature-card");
     article.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" />
+      <img src="${item.image}" alt="${item.name}" loading="lazy" decoding="async" />
       <div>
         <h3>${item.name}</h3>
         <p>${item.detail}</p>
@@ -164,7 +166,7 @@ function loadHome() {
     const galleryItem = document.createElement("figure");
     galleryItem.classList.add("gallery-item");
     galleryItem.innerHTML = `
-      <img src="${item.image}" alt="${item.label} served at Bili-Bili Bistro" />
+      <img src="${item.image}" alt="${item.label} served at Bili-Bili Bistro" loading="lazy" decoding="async" />
       <figcaption>${item.label}</figcaption>
     `;
 

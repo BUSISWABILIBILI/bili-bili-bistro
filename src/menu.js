@@ -183,6 +183,8 @@ function createMenuCard(item) {
   const itemImage = document.createElement("img");
   itemImage.src = item.image;
   itemImage.alt = item.name;
+  itemImage.loading = "lazy";
+  itemImage.decoding = "async";
   itemImage.classList.add("menu-image");
 
   const cardBody = document.createElement("div");

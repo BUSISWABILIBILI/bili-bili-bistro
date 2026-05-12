@@ -2,6 +2,7 @@ import "./styles.css";
 import loadHome from "./home.js";
 import loadMenu from "./menu.js";
 import loadContact from "./contact.js";
+import logoImage from "./assets/images/logo.png";
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("content");
@@ -9,6 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("home-btn");
   const menuBtn = document.getElementById("menu-btn");
   const contactBtn = document.getElementById("contact-btn");
+
+  function installBrandAssets() {
+    const logoMark = document.getElementById("logo-mark");
+
+    if (logoMark) {
+      logoMark.src = logoImage;
+    }
+
+    const favicon =
+      document.querySelector("link[rel='icon']") || document.createElement("link");
+
+    favicon.rel = "icon";
+    favicon.type = "image/png";
+    favicon.href = logoImage;
+
+    if (!favicon.parentNode) {
+      document.head.appendChild(favicon);
+    }
+  }
 
   function clearContent() {
     content.innerHTML = "";
@@ -90,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  installBrandAssets();
   loadHome();
   attachHomeButtonEvent();
   setActiveButton(homeBtn);
