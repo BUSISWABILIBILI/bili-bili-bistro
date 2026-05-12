@@ -1042,9 +1042,9 @@ textarea:focus-visible {
 
 .footer-social a:hover,
 .footer-social a:focus-visible {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--ink);
+  background: rgba(255, 250, 242, 0.1);
+  border-color: rgba(216, 164, 65, 0.45);
+  color: var(--gold);
   text-decoration: none;
   transform: translateY(-2px);
 }
