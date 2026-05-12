@@ -49,6 +49,11 @@ body {
   transform: translateY(-2px);
 }
 
+.nav-buttons button.active {
+  background-color: #ffffff;
+  color: #111827;
+}
+
 #content {
   padding: 4rem 2rem;
 }
