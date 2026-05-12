@@ -28,12 +28,25 @@ function loadContact() {
     <p><span>Hours</span><strong>Monday - Sunday, 10:00 - 22:00</strong></p>
   `;
 
+  const bookingPanel = document.createElement("div");
+  bookingPanel.classList.add("booking-panel");
+  bookingPanel.innerHTML = `
+    <h3>Reservation notes</h3>
+    <p>For groups of six or more, call ahead so the team can prepare your table.</p>
+    <ul>
+      <li>Same-day bookings accepted by phone</li>
+      <li>Outdoor seating available on request</li>
+      <li>Kitchen closes 30 minutes before closing</li>
+    </ul>
+  `;
+
   contactCopy.appendChild(eyebrow);
   contactCopy.appendChild(heading);
   contactCopy.appendChild(intro);
 
   contactSection.appendChild(contactCopy);
   contactSection.appendChild(details);
+  contactSection.appendChild(bookingPanel);
 
   content.appendChild(contactSection);
 }

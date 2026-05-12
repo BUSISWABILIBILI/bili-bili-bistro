@@ -45,12 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function attachHomeButtonEvent() {
     const exploreMenuBtn = document.getElementById("explore-menu-btn");
+    const reserveTableBtn = document.getElementById("reserve-table-btn");
 
     if (exploreMenuBtn) {
       exploreMenuBtn.addEventListener("click", () => {
         clearContent();
         loadMenu();
         setActiveButton(menuBtn);
+      });
+    }
+
+    if (reserveTableBtn) {
+      reserveTableBtn.addEventListener("click", () => {
+        clearContent();
+        loadContact();
+        setActiveButton(contactBtn);
       });
     }
   }

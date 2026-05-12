@@ -14,12 +14,20 @@ function loadMenu() {
   eyebrow.textContent = "House favourites";
 
   const heading = document.createElement("h2");
-  heading.textContent = "A compact menu with big flavour.";
+  heading.textContent = "Seasonal bistro favourites.";
 
   const intro = document.createElement("p");
   intro.classList.add("section-intro");
   intro.textContent =
-    "A focused selection of bistro comforts, grilled signatures, and a dessert worth saving room for.";
+    "A focused selection of grilled signatures, comfort plates, and desserts, prepared fresh for lunch and dinner service.";
+
+  const menuMeta = document.createElement("div");
+  menuMeta.classList.add("menu-meta");
+  menuMeta.innerHTML = `
+    <span><strong>Lunch</strong> 10:00 - 16:00</span>
+    <span><strong>Dinner</strong> 18:00 - 22:00</span>
+    <span><strong>Kitchen note</strong> Ask about today's chef special</span>
+  `;
 
   const menuGrid = document.createElement("div");
   menuGrid.classList.add("menu-grid");
@@ -118,6 +126,7 @@ function loadMenu() {
   menuSection.appendChild(eyebrow);
   menuSection.appendChild(heading);
   menuSection.appendChild(intro);
+  menuSection.appendChild(menuMeta);
   menuSection.appendChild(menuGrid);
 
   content.appendChild(menuSection);
