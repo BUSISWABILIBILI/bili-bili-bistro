@@ -1,6 +1,7 @@
 import heroImage from "./assets/images/hero.jpg";
 import chickenImage from "./assets/images/chicken.jpg";
 import pastaImage from "./assets/images/pasta.jpg";
+import burgerImage from "./assets/images/burger.jpg";
 import dessertImage from "./assets/images/dessert.jpg";
 
 function loadHome() {
@@ -142,6 +143,36 @@ function loadHome() {
 
   featureSection.appendChild(signatureGrid);
 
+  const gallerySection = document.createElement("section");
+  gallerySection.classList.add("gallery-section");
+  gallerySection.innerHTML = `
+    <div class="section-heading">
+      <p class="eyebrow">From the kitchen</p>
+      <h2>Fresh plates, familiar comfort.</h2>
+    </div>
+  `;
+
+  const galleryGrid = document.createElement("div");
+  galleryGrid.classList.add("gallery-grid");
+
+  [
+    { image: chickenImage, label: "Grill" },
+    { image: pastaImage, label: "Pasta" },
+    { image: burgerImage, label: "Burgers" },
+    { image: dessertImage, label: "Dessert" },
+  ].forEach((item) => {
+    const galleryItem = document.createElement("figure");
+    galleryItem.classList.add("gallery-item");
+    galleryItem.innerHTML = `
+      <img src="${item.image}" alt="${item.label} served at Bili-Bili Bistro" />
+      <figcaption>${item.label}</figcaption>
+    `;
+
+    galleryGrid.appendChild(galleryItem);
+  });
+
+  gallerySection.appendChild(galleryGrid);
+
   const visitSection = document.createElement("section");
   visitSection.classList.add("visit-banner");
   visitSection.innerHTML = `
@@ -160,6 +191,7 @@ function loadHome() {
   page.appendChild(heroSection);
   page.appendChild(storySection);
   page.appendChild(featureSection);
+  page.appendChild(gallerySection);
   page.appendChild(visitSection);
 
   content.appendChild(page);

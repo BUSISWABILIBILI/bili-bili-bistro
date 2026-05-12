@@ -40,6 +40,34 @@ function loadContact() {
     </ul>
   `;
 
+  const reservationForm = document.createElement("form");
+  reservationForm.classList.add("reservation-form");
+  reservationForm.id = "reservation-form";
+  reservationForm.innerHTML = `
+    <h3>Plan your visit</h3>
+    <label>
+      Name
+      <input type="text" name="name" placeholder="Your name" />
+    </label>
+    <label>
+      Guests
+      <input type="number" name="guests" min="1" max="20" placeholder="2" />
+    </label>
+    <label>
+      Date
+      <input type="date" name="date" />
+    </label>
+    <label>
+      Time
+      <input type="time" name="time" />
+    </label>
+    <label class="form-wide">
+      Message
+      <textarea name="message" placeholder="Occasion, seating preference, or dietary notes"></textarea>
+    </label>
+    <button type="submit">Request Booking</button>
+  `;
+
   contactCopy.appendChild(eyebrow);
   contactCopy.appendChild(heading);
   contactCopy.appendChild(intro);
@@ -47,6 +75,7 @@ function loadContact() {
   contactSection.appendChild(contactCopy);
   contactSection.appendChild(details);
   contactSection.appendChild(bookingPanel);
+  contactSection.appendChild(reservationForm);
 
   content.appendChild(contactSection);
 }

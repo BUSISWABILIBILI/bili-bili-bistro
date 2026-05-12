@@ -29,10 +29,10 @@ function loadMenu() {
     <span><strong>Kitchen note</strong> Ask about today's chef special</span>
   `;
 
-  const menuGrid = document.createElement("div");
-  menuGrid.classList.add("menu-grid");
-
-  const menuItems = [
+  const menuCategories = [
+    {
+      title: "Grill",
+      items: [
     {
       name: "Bili-Bili Flame Grilled Chicken",
       price: "R145",
@@ -44,6 +44,21 @@ function loadMenu() {
         'Photo by <a href="https://unsplash.com/@omarhakeem" target="_blank">Omar Hakeem</a> on Unsplash',
     },
     {
+      name: "Peri-Peri Chicken Plate",
+      price: "R155",
+      image: chickenImage,
+      tag: "Spicy",
+      description:
+        "Charred chicken brushed with peri-peri glaze, served with slaw and fries.",
+      credit:
+        'Photo by <a href="https://unsplash.com/@omarhakeem" target="_blank">Omar Hakeem</a> on Unsplash',
+    },
+      ],
+    },
+    {
+      title: "Comfort",
+      items: [
+        {
       name: "Creamy Garlic Pasta",
       price: "R120",
       image: pastaImage,
@@ -64,6 +79,21 @@ function loadMenu() {
         'Photo by <a href="https://unsplash.com/@amir_v_ali" target="_blank">amirali mirhashemian</a> on Unsplash',
     },
     {
+      name: "Bistro Pasta Verde",
+      price: "R125",
+      image: pastaImage,
+      tag: "Fresh",
+      description:
+        "Herbed pasta with garlic cream, seasonal greens, and parmesan.",
+      credit:
+        'Photo by <a href="https://unsplash.com/photos/pasta-dish-on-white-ceramic-bowl-wTBGTwHlf0c" target="_blank">Sama Hosseini</a> on Unsplash',
+    },
+      ],
+    },
+    {
+      title: "Dessert",
+      items: [
+        {
       name: "Golden Waffle Dessert",
       price: "R85",
       image: dessertImage,
@@ -73,61 +103,91 @@ function loadMenu() {
       credit:
         'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on Unsplash',
     },
+    {
+      name: "Berry Ice Cream Waffle",
+      price: "R95",
+      image: dessertImage,
+      tag: "Favourite",
+      description:
+        "Crisp waffle layered with vanilla ice cream, syrup, and berries.",
+      credit:
+        'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on Unsplash',
+    },
+      ],
+    },
   ];
 
-  menuItems.forEach((item) => {
-    const card = document.createElement("div");
-    card.classList.add("menu-card");
+  const menuList = document.createElement("div");
+  menuList.classList.add("menu-list");
 
-    const itemImage = document.createElement("img");
-    itemImage.src = item.image;
-    itemImage.alt = item.name;
-    itemImage.classList.add("menu-image");
+  menuCategories.forEach((category) => {
+    const categorySection = document.createElement("section");
+    categorySection.classList.add("menu-category");
 
-    card.appendChild(itemImage);
+    const categoryHeading = document.createElement("h3");
+    categoryHeading.textContent = category.title;
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("menu-card-body");
+    const menuGrid = document.createElement("div");
+    menuGrid.classList.add("menu-grid");
 
-    const itemHeader = document.createElement("div");
-    itemHeader.classList.add("menu-card-header");
+    category.items.forEach((item) => {
+      const card = document.createElement("div");
+      card.classList.add("menu-card");
 
-    const itemName = document.createElement("h3");
-    itemName.textContent = item.name;
+      const itemImage = document.createElement("img");
+      itemImage.src = item.image;
+      itemImage.alt = item.name;
+      itemImage.classList.add("menu-image");
 
-    const itemPrice = document.createElement("span");
-    itemPrice.textContent = item.price;
-    itemPrice.classList.add("price");
+      card.appendChild(itemImage);
 
-    itemHeader.appendChild(itemName);
-    itemHeader.appendChild(itemPrice);
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("menu-card-body");
 
-    const itemTag = document.createElement("p");
-    itemTag.classList.add("menu-tag");
-    itemTag.textContent = item.tag;
+      const itemHeader = document.createElement("div");
+      itemHeader.classList.add("menu-card-header");
 
-    const itemDescription = document.createElement("p");
-    itemDescription.textContent = item.description;
+      const itemName = document.createElement("h4");
+      itemName.textContent = item.name;
 
-    cardBody.appendChild(itemHeader);
-    cardBody.appendChild(itemTag);
-    cardBody.appendChild(itemDescription);
+      const itemPrice = document.createElement("span");
+      itemPrice.textContent = item.price;
+      itemPrice.classList.add("price");
 
-    const imageCredit = document.createElement("p");
-    imageCredit.classList.add("image-credit");
-    imageCredit.innerHTML = item.credit;
+      itemHeader.appendChild(itemName);
+      itemHeader.appendChild(itemPrice);
 
-    cardBody.appendChild(imageCredit);
-    card.appendChild(cardBody);
+      const itemTag = document.createElement("p");
+      itemTag.classList.add("menu-tag");
+      itemTag.textContent = item.tag;
 
-    menuGrid.appendChild(card);
+      const itemDescription = document.createElement("p");
+      itemDescription.textContent = item.description;
+
+      cardBody.appendChild(itemHeader);
+      cardBody.appendChild(itemTag);
+      cardBody.appendChild(itemDescription);
+
+      const imageCredit = document.createElement("p");
+      imageCredit.classList.add("image-credit");
+      imageCredit.innerHTML = item.credit;
+
+      cardBody.appendChild(imageCredit);
+      card.appendChild(cardBody);
+
+      menuGrid.appendChild(card);
+    });
+
+    categorySection.appendChild(categoryHeading);
+    categorySection.appendChild(menuGrid);
+    menuList.appendChild(categorySection);
   });
 
   menuSection.appendChild(eyebrow);
   menuSection.appendChild(heading);
   menuSection.appendChild(intro);
   menuSection.appendChild(menuMeta);
-  menuSection.appendChild(menuGrid);
+  menuSection.appendChild(menuList);
 
   content.appendChild(menuSection);
 }

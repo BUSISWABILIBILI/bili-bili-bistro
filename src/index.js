@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contactBtn.addEventListener("click", () => {
     clearContent();
     loadContact();
+    attachReservationFormEvent();
     setActiveButton(contactBtn);
   });
 
@@ -59,9 +60,34 @@ document.addEventListener("DOMContentLoaded", () => {
       reserveTableBtn.addEventListener("click", () => {
         clearContent();
         loadContact();
+        attachReservationFormEvent();
         setActiveButton(contactBtn);
       });
     }
+  }
+
+  function attachReservationFormEvent() {
+    const reservationForm = document.getElementById("reservation-form");
+
+    if (!reservationForm) return;
+
+    reservationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(reservationForm);
+      const name = formData.get("name") || "Guest";
+      const guests = formData.get("guests") || "Not specified";
+      const date = formData.get("date") || "Not specified";
+      const time = formData.get("time") || "Not specified";
+      const message = formData.get("message") || "No extra notes";
+
+      const subject = encodeURIComponent(`Reservation request from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\nMessage: ${message}`,
+      );
+
+      window.location.href = `mailto:bookings@bilibistro.co.za?subject=${subject}&body=${body}`;
+    });
   }
 
   loadHome();
