@@ -601,11 +601,22 @@ textarea:focus-visible {
 .menu-meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
+  gap: 1rem;
   margin: 0 0 1.4rem;
+  align-items: stretch;
+}
+
+.menu-meta,
+.menu-list {
+  width: min(100%, var(--content-max));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   padding: 0.9rem 1rem;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -615,49 +626,68 @@ textarea:focus-visible {
 }
 
 .menu-meta strong {
-  display: block;
+  display: inline-block;
+  flex: 0 0 auto;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .menu-list {
   display: grid;
-  gap: 2.5rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
 }
 
 .menu-category {
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--line);
 }
 
-.menu-category > h3 {
+.menu-category-header {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: space-between;
+}
+
+.menu-category-header h3 {
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.7rem, 3vw, 2.5rem);
   line-height: 1;
 }
 
-.menu-category > h3::after {
+.menu-category-header h3::after {
+  display: none;
+}
+
+.menu-category-header::after {
   content: "";
   height: 1px;
   flex: 1;
   background: var(--line);
 }
 
+.menu-category-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
 .menu-card {
   display: grid;
-  grid-template-columns: minmax(150px, 0.72fr) 1fr;
-  gap: 1rem;
+  grid-template-rows: auto 1fr;
+  gap: 0;
   background-color: rgba(255, 255, 255, 0.72);
-  padding: 0.8rem;
+  overflow: hidden;
+  padding: 0;
   border-radius: 8px;
   text-align: left;
   border: 1px solid var(--line);
@@ -677,9 +707,9 @@ textarea:focus-visible {
 .menu-card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-width: 0;
-  padding: 0.4rem 0.3rem 0.4rem 0;
+  padding: 1rem;
 }
 
 .menu-card-header {
@@ -691,7 +721,7 @@ textarea:focus-visible {
 
 .menu-card h4 {
   color: var(--ink);
-  font-size: 1.08rem;
+  font-size: 1rem;
   line-height: 1.25;
   margin-bottom: 0.45rem;
 }
@@ -728,10 +758,10 @@ textarea:focus-visible {
 
 .menu-image {
   width: 100%;
-  height: 100%;
-  min-height: 190px;
+  height: 180px;
+  min-height: 0;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .contact-section {
@@ -1038,11 +1068,31 @@ textarea:focus-visible {
   }
 
   .menu-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .menu-meta {
     grid-template-columns: 1fr;
+  }
+
+  .menu-meta span {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .menu-category-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .menu-category-header::after {
+    display: none;
+  }
+
+  .menu-category-header p {
+    white-space: normal;
   }
 
   .contact-section {
@@ -1122,6 +1172,10 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
   .gallery-grid,
   .reservation-form {
     grid-template-columns: 1fr;
@@ -1137,7 +1191,7 @@ textarea:focus-visible {
   }
 
   .menu-image {
-    height: 230px;
+    height: 220px;
   }
 
   .contact-section {
