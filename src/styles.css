@@ -52,3 +52,38 @@ body {
 #content {
   padding: 4rem 2rem;
 }
+.hero {
+  max-width: 700px;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #f59e0b;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #d1d5db;
+}
+
+.hero-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #f59e0b;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #fbbf24;
+  transform: translateY(-3px);
+}
