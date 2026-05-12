@@ -78,6 +78,12 @@ function loadMenu() {
     card.appendChild(itemPrice);
     card.appendChild(itemDescription);
 
+    const imageCredit = document.createElement("p");
+    imageCredit.classList.add("image-credit");
+    imageCredit.innerHTML = item.credit;
+
+    card.appendChild(imageCredit);
+
     menuGrid.appendChild(card);
   });
 
