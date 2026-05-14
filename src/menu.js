@@ -16,35 +16,35 @@ import chocolateWaffleImage from "./assets/images/chocolate-waffle.jpg";
 
 const credits = {
   chicken:
-    'Photo by <a href="https://unsplash.com/@omarhakeem" target="_blank">Omar Hakeem</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@omarhakeem" target="_blank">Omar Hakeem</a> on <a href="https://unsplash.com/">Unsplash</a>',
   pasta:
-    'Photo by <a href="https://unsplash.com/photos/pasta-dish-on-white-ceramic-bowl-wTBGTwHlf0c" target="_blank">Sama Hosseini</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/photos/pasta-dish-on-white-ceramic-bowl-wTBGTwHlf0c" target="_blank">Sama Hosseini</a> on <a href="https://unsplash.com/">Unsplash</a>',
   burger:
-    'Photo by <a href="https://unsplash.com/@amir_v_ali" target="_blank">amirali mirhashemian</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@amir_v_ali" target="_blank">amirali mirhashemian</a> on <a href="https://unsplash.com/">Unsplash</a>',
   dessert:
-    'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on <a href="https://unsplash.com/">Unsplash</a>',
   chickenBite:
-    'Photo by <a href="https://unsplash.com/@joestudios" target="_blank">joe boshra</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@joestudios" target="_blank">joe boshra</a> on <a href="https://unsplash.com/">Unsplash</a>',
   garlicBread:
-    'Photo by <a href="https://unsplash.com/@waldemarbrandt67w" target="_blank">Waldermar Brandt</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@waldemarbrandt67w" target="_blank">Waldermar Brandt</a> on <a href="https://unsplash.com/">Unsplash</a>',
   fries:
-    'Photo by <a href="https://unsplash.com/@nahimaaparicio" target="_blank">Nahima Aparicio</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@nahimaaparicio" target="_blank">Nahima Aparicio</a> on <a href="https://unsplash.com/">Unsplash</a>',
   periperiChicken:
-    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on <a href="https://unsplash.com/">Unsplash</a>',
   smokyChicken:
-    'Photo by <a href="https://unsplash.com/@17allansfilms" target="_blank">Allen Lainez</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@17allansfilms" target="_blank">Allen Lainez</a> on <a href="https://unsplash.com/">Unsplash</a>',
   pastaVerde:
-    'Photo by <a href="https://unsplash.com/@nerfee" target="_blank">Nerfee Mirandilla</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@nerfee" target="_blank">Nerfee Mirandilla</a> on <a href="https://unsplash.com/">Unsplash</a>',
   doubleBurger:
-    'Photo by <a href="https://unsplash.com/@stumoffatimages" target="_blank">Stu Moffat</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@stumoffatimages" target="_blank">Stu Moffat</a> on <a href="https://unsplash.com/">Unsplash</a>',
   chickenAlfredo:
-    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on <a href="https://unsplash.com/">Unsplash</a>',
   burgerStack:
-    'Photo by <a href="https://unsplash.com/@wondermario__" target="_blank">Mario</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@wondermario__" target="_blank">Mario</a> on <a href="https://unsplash.com/">Unsplash</a>',
   berryWaffle:
-    'Photo by <a href="https://unsplash.com/@good_citizen" target="_blank">Humphrey M</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@good_citizen" target="_blank">Humphrey M</a> on <a href="https://unsplash.com/">Unsplash</a>',
   chocolateWaffle:
-    'Photo by <a href="https://unsplash.com/@dino_trexx" target="_blank">Fatemeh Rz</a> on Unsplash',
+    'Photo by <a href="https://unsplash.com/@dino_trexx" target="_blank">Fatemeh Rz</a> on <a href="https://unsplash.com/">Unsplash</a>',
 };
 
 const menuCategories = [

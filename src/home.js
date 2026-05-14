@@ -71,14 +71,15 @@ function loadHome() {
 
   const imageBadge = document.createElement("div");
   imageBadge.classList.add("hero-badge");
-  imageBadge.innerHTML = "<strong>Chef's table</strong><span>Seasonal dishes every week</span>";
+  imageBadge.innerHTML =
+    "<strong>Chef's table</strong><span>Seasonal dishes every week</span>";
 
   imageContainer.appendChild(imageBadge);
 
   const credit = document.createElement("p");
   credit.classList.add("image-credit");
   credit.innerHTML =
-    'Photo by <a href="https://unsplash.com/@madebyswish" target="_blank">Emma Houghton</a> on Unsplash';
+    'Photo by <a href="https://unsplash.com/@ninjason" target="_blank">Jason Leung</a> on <a href="https://unsplash.com/">Unsplash</a>';
 
   imageContainer.appendChild(credit);
 
