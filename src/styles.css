@@ -1000,6 +1000,19 @@ textarea:focus-visible {
   background: var(--clay-dark);
 }
 
+.form-status {
+  grid-column: 1 / -1;
+  min-height: 1.5rem;
+  color: var(--olive);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.form-status-error {
+  color: var(--clay-dark);
+}
+
 .booking-panel h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.6rem;

@@ -47,25 +47,30 @@ function loadContact() {
     <h3>Plan your visit</h3>
     <label>
       Name
-      <input type="text" name="name" placeholder="Your name" />
+      <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+    </label>
+    <label>
+      Phone
+      <input type="tel" name="phone" placeholder="+27 82 000 0000" autocomplete="tel" required />
     </label>
     <label>
       Guests
-      <input type="number" name="guests" min="1" max="20" placeholder="2" />
+      <input type="number" name="guests" min="1" max="20" placeholder="2" required />
     </label>
     <label>
       Date
-      <input type="date" name="date" />
+      <input type="date" name="date" required />
     </label>
     <label>
       Time
-      <input type="time" name="time" />
+      <input type="time" name="time" min="10:00" max="21:30" step="900" required />
     </label>
     <label class="form-wide">
       Message
       <textarea name="message" placeholder="Occasion, seating preference, or dietary notes"></textarea>
     </label>
     <button type="submit">Request Booking</button>
+    <p class="form-status" id="reservation-status" role="status" aria-live="polite"></p>
   `;
 
   contactCopy.appendChild(eyebrow);

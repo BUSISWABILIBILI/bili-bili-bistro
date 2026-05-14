@@ -153,21 +153,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!reservationForm) return;
 
+    const dateInput = reservationForm.elements.date;
+    const status = document.getElementById("reservation-status");
+    const today = new Date().toISOString().slice(0, 10);
+
+    dateInput.min = today;
+
     reservationForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
+      if (!reservationForm.reportValidity()) {
+        status.textContent = "Please complete the required booking details.";
+        status.classList.add("form-status-error");
+        return;
+      }
+
       const formData = new FormData(reservationForm);
-      const name = formData.get("name") || "Guest";
-      const guests = formData.get("guests") || "Not specified";
-      const date = formData.get("date") || "Not specified";
-      const time = formData.get("time") || "Not specified";
+      const name = formData.get("name").trim();
+      const phone = formData.get("phone").trim();
+      const guests = formData.get("guests");
+      const date = formData.get("date");
+      const time = formData.get("time");
       const message = formData.get("message") || "No extra notes";
 
       const subject = encodeURIComponent(`Reservation request from ${name}`);
       const body = encodeURIComponent(
-        `Name: ${name}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\nMessage: ${message}`,
+        `Name: ${name}\nPhone: ${phone}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\nMessage: ${message}`,
       );
 
+      status.textContent =
+        "Opening your email app with the booking details. Please send the draft to finish the request.";
+      status.classList.remove("form-status-error");
       window.location.href = `mailto:bookings@bilibistro.co.za?subject=${subject}&body=${body}`;
     });
   }
