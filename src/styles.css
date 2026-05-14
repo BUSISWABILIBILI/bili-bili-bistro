@@ -789,6 +789,113 @@ textarea:focus-visible {
   border-radius: 0;
 }
 
+.about-section {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--gutter), 1fr)
+    minmax(280px, 520px)
+    minmax(320px, 660px)
+    minmax(var(--gutter), 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(3rem, 6vw, 6rem) 0;
+  background: var(--panel);
+}
+
+.about-copy {
+  grid-column: 2;
+}
+
+.about-copy h2,
+.about-kitchen h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.about-copy p,
+.about-kitchen p,
+.about-value-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about-copy p {
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  grid-column: 3;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 46vw, 560px);
+  object-fit: cover;
+}
+
+.about-image figcaption {
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: rgba(255, 250, 242, 0.92);
+}
+
+.about-values {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.about-value-card {
+  min-height: 100%;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.about-value-card h3 {
+  color: var(--ink);
+  font-size: 1.05rem;
+  margin-bottom: 0.55rem;
+}
+
+.about-kitchen {
+  grid-column: 2 / 4;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding-top: clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+.about-food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.about-food-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .contact-section {
   width: 100%;
   max-width: none;
@@ -1113,17 +1220,24 @@ textarea:focus-visible {
   .contact-copy,
   .contact-details,
   .booking-panel,
-  .reservation-form {
+  .reservation-form,
+  .about-copy,
+  .about-image,
+  .about-values,
+  .about-kitchen {
     grid-column: auto;
   }
 
   .hero-highlights,
   .restaurant-story,
-  .visit-banner {
+  .visit-banner,
+  .about-section,
+  .about-kitchen {
     grid-template-columns: 1fr;
   }
 
-  .signature-grid {
+  .signature-grid,
+  .about-values {
     grid-template-columns: 1fr;
   }
 
@@ -1177,6 +1291,14 @@ textarea:focus-visible {
     padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
   }
 
+  .about-section {
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 3rem);
+  }
+
+  .about-image img {
+    height: min(58vh, 460px);
+  }
+
   .booking-panel {
     grid-template-columns: 1fr;
   }
@@ -1211,12 +1333,15 @@ textarea:focus-visible {
   .nav-buttons {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 8px;
   }
 
   .nav-buttons button {
     min-width: 0;
-    flex: 1;
+    flex: 1 1 calc(50% - 0.35rem);
     padding: 0.65rem 0.5rem;
+    border-radius: 6px;
   }
 
   #content {
@@ -1274,6 +1399,15 @@ textarea:focus-visible {
 
   .menu-image {
     height: 280px;
+  }
+
+  .about-image img,
+  .about-food-grid img {
+    height: 260px;
+  }
+
+  .about-food-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-section {

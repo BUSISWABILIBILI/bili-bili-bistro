@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const homeBtn = document.getElementById("home-btn");
   const menuBtn = document.getElementById("menu-btn");
+  const aboutBtn = document.getElementById("about-btn");
   const contactBtn = document.getElementById("contact-btn");
 
   function installBrandAssets() {
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setActiveButton(activeButton) {
-    const buttons = [homeBtn, menuBtn, contactBtn];
+    const buttons = [homeBtn, menuBtn, aboutBtn, contactBtn];
 
     buttons.forEach((button) => {
       button.classList.remove("active");
@@ -59,6 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveButton(contactBtn);
   }
 
+  async function loadAboutPage() {
+    const { default: loadAbout } = await import("./about.js");
+
+    clearContent();
+    loadAbout();
+    setActiveButton(aboutBtn);
+  }
+
   homeBtn.addEventListener("click", () => {
     clearContent();
     loadHome();
@@ -67,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   menuBtn.addEventListener("click", loadMenuPage);
+
+  aboutBtn.addEventListener("click", loadAboutPage);
 
   contactBtn.addEventListener("click", loadContactPage);
 
