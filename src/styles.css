@@ -1018,21 +1018,11 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
-.contact-actions a:nth-child(2) {
-  background: var(--olive);
-  border-color: rgba(89, 106, 63, 0.3);
-}
-
 .contact-actions a:hover,
 .contact-actions a:focus-visible {
   background: var(--clay-dark);
   color: white;
   text-decoration: none;
-}
-
-.contact-actions a:nth-child(2):hover,
-.contact-actions a:nth-child(2):focus-visible {
-  background: #465331;
 }
 
 .booking-panel {

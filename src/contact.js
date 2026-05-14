@@ -2,8 +2,6 @@ function loadContact() {
   const content = document.getElementById("content");
   const mapUrl =
     "https://www.google.com/maps/search/?api=1&query=24%20Golden%20Street%2C%20Johannesburg";
-  const whatsappUrl =
-    "https://wa.me/27115552026?text=Hi%20Bili-Bili%20Bistro%2C%20I%27d%20like%20to%20request%20a%20table%20booking.";
 
   const contactSection = document.createElement("section");
   contactSection.classList.add("contact-section");
@@ -36,7 +34,6 @@ function loadContact() {
   contactActions.classList.add("contact-actions");
   contactActions.innerHTML = `
     <a href="${mapUrl}" target="_blank" rel="noopener noreferrer">Open Map</a>
-    <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">Book on WhatsApp</a>
   `;
 
   const bookingPanel = document.createElement("div");
