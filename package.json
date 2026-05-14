@@ -1,16 +1,23 @@
 {
-  "name": "restaurant-page",
+  "name": "bili-bili-bistro",
   "version": "1.0.0",
+  "description": "A responsive restaurant website for Bili-Bili Bistro in Johannesburg.",
   "type": "module",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack"
+    "dev": "webpack serve",
+    "build": "webpack",
+    "check": "webpack --mode production"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "restaurant",
+    "bistro",
+    "webpack",
+    "javascript"
+  ],
+  "author": "Busiswa Bili-bili",
+  "license": "MIT",
   "devDependencies": {
     "css-loader": "^7.1.4",
     "html-webpack-plugin": "^5.6.7",
