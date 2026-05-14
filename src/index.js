@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const aboutBtn = document.getElementById("about-btn");
   const contactBtn = document.getElementById("contact-btn");
+  const pageButtons = {
+    home: homeBtn,
+    menu: menuBtn,
+    about: aboutBtn,
+    contact: contactBtn,
+  };
+  const pageTitles = {
+    home: "Bili-Bili Bistro",
+    menu: "Menu | Bili-Bili Bistro",
+    about: "About | Bili-Bili Bistro",
+    contact: "Bookings | Bili-Bili Bistro",
+  };
 
   function installBrandAssets() {
     const logoMark = document.getElementById("logo-mark");
@@ -33,14 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
     content.innerHTML = "";
   }
 
-  function setActiveButton(activeButton) {
-    const buttons = [homeBtn, menuBtn, aboutBtn, contactBtn];
-
-    buttons.forEach((button) => {
+  function setActivePage(pageName) {
+    Object.entries(pageButtons).forEach(([buttonPage, button]) => {
       button.classList.remove("active");
+      button.removeAttribute("aria-current");
+
+      if (buttonPage === pageName) {
+        button.classList.add("active");
+        button.setAttribute("aria-current", "page");
+      }
     });
 
-    activeButton.classList.add("active");
+    document.title = pageTitles[pageName];
   }
 
   async function loadMenuPage() {
@@ -48,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     clearContent();
     loadMenu();
-    setActiveButton(menuBtn);
   }
 
   async function loadContactPage() {
@@ -57,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clearContent();
     loadContact();
     attachReservationFormEvent();
-    setActiveButton(contactBtn);
   }
 
   async function loadAboutPage() {
@@ -65,32 +79,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
     clearContent();
     loadAbout();
-    setActiveButton(aboutBtn);
   }
 
-  homeBtn.addEventListener("click", () => {
+  function loadHomePage() {
     clearContent();
     loadHome();
     attachHomeButtonEvent();
-    setActiveButton(homeBtn);
-  });
+  }
 
-  menuBtn.addEventListener("click", loadMenuPage);
+  const pageLoaders = {
+    home: loadHomePage,
+    menu: loadMenuPage,
+    about: loadAboutPage,
+    contact: loadContactPage,
+  };
 
-  aboutBtn.addEventListener("click", loadAboutPage);
+  function getHashPageName() {
+    return window.location.hash.replace("#", "");
+  }
 
-  contactBtn.addEventListener("click", loadContactPage);
+  function getPageFromHash() {
+    const pageName = getHashPageName();
+
+    return pageLoaders[pageName] ? pageName : "home";
+  }
+
+  async function renderPage() {
+    const requestedPage = getHashPageName();
+    const pageName = getPageFromHash();
+
+    if (requestedPage && !pageLoaders[requestedPage]) {
+      window.history.replaceState(null, "", `#${pageName}`);
+    }
+
+    await pageLoaders[pageName]();
+    setActivePage(pageName);
+    content.setAttribute("tabindex", "-1");
+    content.focus({ preventScroll: true });
+  }
+
+  function navigateTo(pageName) {
+    if (getHashPageName() === pageName) {
+      renderPage();
+      return;
+    }
+
+    window.location.hash = pageName;
+  }
+
+  homeBtn.addEventListener("click", () => navigateTo("home"));
+
+  menuBtn.addEventListener("click", () => navigateTo("menu"));
+
+  aboutBtn.addEventListener("click", () => navigateTo("about"));
+
+  contactBtn.addEventListener("click", () => navigateTo("contact"));
 
   function attachHomeButtonEvent() {
     const exploreMenuBtn = document.getElementById("explore-menu-btn");
     const reserveTableBtn = document.getElementById("reserve-table-btn");
 
     if (exploreMenuBtn) {
-      exploreMenuBtn.addEventListener("click", loadMenuPage);
+      exploreMenuBtn.addEventListener("click", () => navigateTo("menu"));
     }
 
     if (reserveTableBtn) {
-      reserveTableBtn.addEventListener("click", loadContactPage);
+      reserveTableBtn.addEventListener("click", () => navigateTo("contact"));
     }
   }
 
@@ -119,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   installBrandAssets();
-  loadHome();
-  attachHomeButtonEvent();
-  setActiveButton(homeBtn);
+  window.addEventListener("hashchange", renderPage);
+  renderPage();
 });
