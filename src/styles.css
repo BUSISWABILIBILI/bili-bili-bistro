@@ -622,6 +622,7 @@ textarea:focus-visible {
 }
 
 .menu-meta,
+.menu-filters,
 .menu-list {
   width: min(100%, var(--content-max));
   margin-left: auto;
@@ -645,6 +646,52 @@ textarea:focus-visible {
   flex: 0 0 auto;
   color: var(--ink);
   white-space: nowrap;
+}
+
+.menu-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.menu-filters p {
+  color: var(--olive);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.menu-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.menu-filter-buttons button {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--charcoal);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.menu-filter-buttons button:hover,
+.menu-filter-buttons button.active {
+  border-color: rgba(166, 79, 42, 0.28);
+  background: var(--ink);
+  color: var(--surface);
 }
 
 .menu-grid {
@@ -758,6 +805,32 @@ textarea:focus-visible {
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.dietary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.dietary-tags span {
+  padding: 0.22rem 0.5rem;
+  border: 1px solid rgba(47, 42, 38, 0.12);
+  border-radius: 999px;
+  color: var(--charcoal);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.menu-empty-state {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 700;
 }
 
 .menu-card p {
@@ -922,6 +995,44 @@ textarea:focus-visible {
 
 .contact-details {
   grid-column: 3;
+}
+
+.contact-actions {
+  grid-column: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-actions a {
+  min-height: 2.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(166, 79, 42, 0.3);
+  border-radius: 999px;
+  background: var(--clay);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contact-actions a:nth-child(2) {
+  background: var(--olive);
+  border-color: rgba(89, 106, 63, 0.3);
+}
+
+.contact-actions a:hover,
+.contact-actions a:focus-visible {
+  background: var(--clay-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.contact-actions a:nth-child(2):hover,
+.contact-actions a:nth-child(2):focus-visible {
+  background: #465331;
 }
 
 .booking-panel {
@@ -1244,6 +1355,7 @@ textarea:focus-visible {
   .visit-details,
   .contact-copy,
   .contact-details,
+  .contact-actions,
   .booking-panel,
   .reservation-form,
   .about-copy,
@@ -1289,6 +1401,15 @@ textarea:focus-visible {
 
   .menu-meta {
     grid-template-columns: 1fr;
+  }
+
+  .menu-filters {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .menu-filter-buttons {
+    justify-content: flex-start;
   }
 
   .menu-meta span {

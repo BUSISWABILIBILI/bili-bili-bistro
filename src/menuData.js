@@ -57,6 +57,8 @@ const menuCategories = [
         price: "R78",
         image: chickenBiteImage,
         tag: "Share",
+        dietary: ["Chicken", "Contains egg"],
+        popular: true,
         description:
           "Crisp chicken bites tossed in house spice with lemon aioli.",
         credit: credits.chickenBite,
@@ -66,6 +68,8 @@ const menuCategories = [
         price: "R65",
         image: garlicBreadImage,
         tag: "Vegetarian",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Warm flatbread with garlic butter, herbs, and parmesan dust.",
         credit: credits.garlicBread,
@@ -75,6 +79,8 @@ const menuCategories = [
         price: "R72",
         image: friesImage,
         tag: "Popular",
+        dietary: ["Vegetarian", "Contains dairy"],
+        popular: true,
         description:
           "Golden fries topped with bistro sauce, cheese, and spring onion.",
         credit: credits.fries,
@@ -90,6 +96,8 @@ const menuCategories = [
         price: "R145",
         image: chickenImage,
         tag: "Signature",
+        dietary: ["Chicken", "Spicy"],
+        popular: true,
         description:
           "Tender grilled chicken served with spicy house sauce and golden fries.",
         credit: credits.chicken,
@@ -99,6 +107,8 @@ const menuCategories = [
         price: "R155",
         image: periperiChickenImage,
         tag: "Spicy",
+        dietary: ["Chicken", "Spicy"],
+        popular: true,
         description:
           "Charred chicken brushed with peri-peri glaze, served with slaw and fries.",
         credit: credits.periperiChicken,
@@ -108,6 +118,8 @@ const menuCategories = [
         price: "R165",
         image: smokyChickenImage,
         tag: "Chef pick",
+        dietary: ["Chicken"],
+        popular: false,
         description:
           "Slow-marinated half chicken with charred lemon and herb butter.",
         credit: credits.smokyChicken,
@@ -123,6 +135,8 @@ const menuCategories = [
         price: "R120",
         image: pastaImage,
         tag: "Vegetarian",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: true,
         description:
           "Pasta tossed in a rich garlic cream sauce with fresh herbs.",
         credit: credits.pasta,
@@ -132,6 +146,8 @@ const menuCategories = [
         price: "R135",
         image: burgerImage,
         tag: "Popular",
+        dietary: ["Beef", "Contains dairy", "Contains gluten"],
+        popular: true,
         description:
           "Juicy beef burger with caramelized onions, cheese, and bistro sauce.",
         credit: credits.burger,
@@ -141,6 +157,8 @@ const menuCategories = [
         price: "R125",
         image: pastaVerdeImage,
         tag: "Fresh",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Herbed pasta with garlic cream, seasonal greens, and parmesan.",
         credit: credits.pastaVerde,
@@ -150,6 +168,8 @@ const menuCategories = [
         price: "R165",
         image: doubleBurgerImage,
         tag: "Hearty",
+        dietary: ["Beef", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Two beef patties, cheddar, pickles, caramelized onions, and house sauce.",
         credit: credits.doubleBurger,
@@ -159,6 +179,8 @@ const menuCategories = [
         price: "R148",
         image: chickenAlfredoImage,
         tag: "Creamy",
+        dietary: ["Chicken", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Garlic cream pasta topped with grilled chicken and cracked black pepper.",
         credit: credits.chickenAlfredo,
@@ -168,6 +190,8 @@ const menuCategories = [
         price: "R150",
         image: burgerStackImage,
         tag: "New",
+        dietary: ["Beef", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Beef burger with smoky sauce, cheese, tomato relish, and crisp lettuce.",
         credit: credits.burgerStack,
@@ -183,6 +207,8 @@ const menuCategories = [
         price: "R85",
         image: dessertImage,
         tag: "Sweet",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: true,
         description:
           "Warm waffle topped with ice cream, syrup, and seasonal berries.",
         credit: credits.dessert,
@@ -192,6 +218,8 @@ const menuCategories = [
         price: "R95",
         image: berryWaffleImage,
         tag: "Favourite",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: true,
         description:
           "Crisp waffle layered with vanilla ice cream, syrup, and berries.",
         credit: credits.berryWaffle,
@@ -201,6 +229,8 @@ const menuCategories = [
         price: "R98",
         image: chocolateWaffleImage,
         tag: "Indulgent",
+        dietary: ["Vegetarian", "Contains dairy", "Contains gluten"],
+        popular: false,
         description:
           "Warm waffle, chocolate sauce, ice cream, and toasted crumble.",
         credit: credits.chocolateWaffle,
