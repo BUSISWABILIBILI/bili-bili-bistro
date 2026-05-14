@@ -2,6 +2,17 @@ import chickenImage from "./assets/images/chicken.jpg";
 import pastaImage from "./assets/images/pasta.jpg";
 import burgerImage from "./assets/images/burger.jpg";
 import dessertImage from "./assets/images/dessert.jpg";
+import chickenBiteImage from "./assets/images/chicken-bite.jpg";
+import garlicBreadImage from "./assets/images/garlic-bread.jpg";
+import friesImage from "./assets/images/fries.jpg";
+import periperiChickenImage from "./assets/images/peri-peri-chicken.jpg";
+import smokyChickenImage from "./assets/images/smoky-chicken.jpg";
+import pastaVerdeImage from "./assets/images/pasta-verde.jpg";
+import doubleBurgerImage from "./assets/images/double-burger.jpg";
+import chickenAlfredoImage from "./assets/images/chicken-alfredo.jpg";
+import burgerStackImage from "./assets/images/burger-stack.jpg";
+import berryWaffleImage from "./assets/images/berry-waffle.jpg";
+import chocolateWaffleImage from "./assets/images/chocolate-waffle.jpg";
 
 const credits = {
   chicken:
@@ -12,6 +23,28 @@ const credits = {
     'Photo by <a href="https://unsplash.com/@amir_v_ali" target="_blank">amirali mirhashemian</a> on Unsplash',
   dessert:
     'Photo by <a href="https://unsplash.com/@maryamjahanmehr" target="_blank">maryam jahanmehr</a> on Unsplash',
+  chickenBite:
+    'Photo by <a href="https://unsplash.com/@joestudios" target="_blank">joe boshra</a> on Unsplash',
+  garlicBread:
+    'Photo by <a href="https://unsplash.com/@waldemarbrandt67w" target="_blank">Waldermar Brandt</a> on Unsplash',
+  fries:
+    'Photo by <a href="https://unsplash.com/@nahimaaparicio" target="_blank">Nahima Aparicio</a> on Unsplash',
+  periperiChicken:
+    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on Unsplash',
+  smokyChicken:
+    'Photo by <a href="https://unsplash.com/@17allansfilms" target="_blank">Allen Lainez</a> on Unsplash',
+  pastaVerde:
+    'Photo by <a href="https://unsplash.com/@nerfee" target="_blank">Nerfee Mirandilla</a> on Unsplash',
+  doubleBurger:
+    'Photo by <a href="https://unsplash.com/@stumoffatimages" target="_blank">Stu Moffat</a> on Unsplash',
+  chickenAlfredo:
+    'Photo by <a href="https://unsplash.com/@le_y0u" target="_blank">You Le</a> on Unsplash',
+  burgerStack:
+    'Photo by <a href="https://unsplash.com/@wondermario__" target="_blank">Mario</a> on Unsplash',
+  berryWaffle:
+    'Photo by <a href="https://unsplash.com/@good_citizen" target="_blank">Humphrey M</a> on Unsplash',
+  chocolateWaffle:
+    'Photo by <a href="https://unsplash.com/@dino_trexx" target="_blank">Fatemeh Rz</a> on Unsplash',
 };
 
 const menuCategories = [
@@ -22,29 +55,29 @@ const menuCategories = [
       {
         name: "Bili-Bili Chicken Bites",
         price: "R78",
-        image: chickenImage,
+        image: chickenBiteImage,
         tag: "Share",
         description:
           "Crisp chicken bites tossed in house spice with lemon aioli.",
-        credit: credits.chicken,
+        credit: credits.chickenBite,
       },
       {
         name: "Garlic Herb Flatbread",
         price: "R65",
-        image: pastaImage,
+        image: garlicBreadImage,
         tag: "Vegetarian",
         description:
           "Warm flatbread with garlic butter, herbs, and parmesan dust.",
-        credit: credits.pasta,
+        credit: credits.garlicBread,
       },
       {
         name: "Loaded Bistro Fries",
         price: "R72",
-        image: burgerImage,
+        image: friesImage,
         tag: "Popular",
         description:
           "Golden fries topped with bistro sauce, cheese, and spring onion.",
-        credit: credits.burger,
+        credit: credits.fries,
       },
     ],
   },
@@ -64,20 +97,20 @@ const menuCategories = [
       {
         name: "Peri-Peri Chicken Plate",
         price: "R155",
-        image: chickenImage,
+        image: periperiChickenImage,
         tag: "Spicy",
         description:
           "Charred chicken brushed with peri-peri glaze, served with slaw and fries.",
-        credit: credits.chicken,
+        credit: credits.periperiChicken,
       },
       {
         name: "Smoky Half Chicken",
         price: "R165",
-        image: chickenImage,
+        image: smokyChickenImage,
         tag: "Chef pick",
         description:
           "Slow-marinated half chicken with charred lemon and herb butter.",
-        credit: credits.chicken,
+        credit: credits.smokyChicken,
       },
     ],
   },
@@ -106,38 +139,38 @@ const menuCategories = [
       {
         name: "Bistro Pasta Verde",
         price: "R125",
-        image: pastaImage,
+        image: pastaVerdeImage,
         tag: "Fresh",
         description:
           "Herbed pasta with garlic cream, seasonal greens, and parmesan.",
-        credit: credits.pasta,
+        credit: credits.pastaVerde,
       },
       {
         name: "Double Bistro Burger",
         price: "R165",
-        image: burgerImage,
+        image: doubleBurgerImage,
         tag: "Hearty",
         description:
           "Two beef patties, cheddar, pickles, caramelized onions, and house sauce.",
-        credit: credits.burger,
+        credit: credits.doubleBurger,
       },
       {
         name: "Chicken Alfredo Bowl",
         price: "R148",
-        image: pastaImage,
+        image: chickenAlfredoImage,
         tag: "Creamy",
         description:
           "Garlic cream pasta topped with grilled chicken and cracked black pepper.",
-        credit: credits.pasta,
+        credit: credits.chickenAlfredo,
       },
       {
         name: "Bili-Bili Burger Stack",
         price: "R150",
-        image: burgerImage,
+        image: burgerStackImage,
         tag: "New",
         description:
           "Beef burger with smoky sauce, cheese, tomato relish, and crisp lettuce.",
-        credit: credits.burger,
+        credit: credits.burgerStack,
       },
     ],
   },
@@ -157,20 +190,20 @@ const menuCategories = [
       {
         name: "Berry Ice Cream Waffle",
         price: "R95",
-        image: dessertImage,
+        image: berryWaffleImage,
         tag: "Favourite",
         description:
           "Crisp waffle layered with vanilla ice cream, syrup, and berries.",
-        credit: credits.dessert,
+        credit: credits.berryWaffle,
       },
       {
         name: "Chocolate Waffle Sundae",
         price: "R98",
-        image: dessertImage,
+        image: chocolateWaffleImage,
         tag: "Indulgent",
         description:
           "Warm waffle, chocolate sauce, ice cream, and toasted crumble.",
-        credit: credits.dessert,
+        credit: credits.chocolateWaffle,
       },
     ],
   },

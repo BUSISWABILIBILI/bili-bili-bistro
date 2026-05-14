@@ -1,7 +1,5 @@
 import "./styles.css";
 import loadHome from "./home.js";
-import loadMenu from "./menu.js";
-import loadContact from "./contact.js";
 import logoImage from "./assets/images/logo.png";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,6 +42,23 @@ document.addEventListener("DOMContentLoaded", () => {
     activeButton.classList.add("active");
   }
 
+  async function loadMenuPage() {
+    const { default: loadMenu } = await import("./menu.js");
+
+    clearContent();
+    loadMenu();
+    setActiveButton(menuBtn);
+  }
+
+  async function loadContactPage() {
+    const { default: loadContact } = await import("./contact.js");
+
+    clearContent();
+    loadContact();
+    attachReservationFormEvent();
+    setActiveButton(contactBtn);
+  }
+
   homeBtn.addEventListener("click", () => {
     clearContent();
     loadHome();
@@ -51,38 +66,20 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveButton(homeBtn);
   });
 
-  menuBtn.addEventListener("click", () => {
-    clearContent();
-    loadMenu();
-    setActiveButton(menuBtn);
-  });
+  menuBtn.addEventListener("click", loadMenuPage);
 
-  contactBtn.addEventListener("click", () => {
-    clearContent();
-    loadContact();
-    attachReservationFormEvent();
-    setActiveButton(contactBtn);
-  });
+  contactBtn.addEventListener("click", loadContactPage);
 
   function attachHomeButtonEvent() {
     const exploreMenuBtn = document.getElementById("explore-menu-btn");
     const reserveTableBtn = document.getElementById("reserve-table-btn");
 
     if (exploreMenuBtn) {
-      exploreMenuBtn.addEventListener("click", () => {
-        clearContent();
-        loadMenu();
-        setActiveButton(menuBtn);
-      });
+      exploreMenuBtn.addEventListener("click", loadMenuPage);
     }
 
     if (reserveTableBtn) {
-      reserveTableBtn.addEventListener("click", () => {
-        clearContent();
-        loadContact();
-        attachReservationFormEvent();
-        setActiveButton(contactBtn);
-      });
+      reserveTableBtn.addEventListener("click", loadContactPage);
     }
   }
 

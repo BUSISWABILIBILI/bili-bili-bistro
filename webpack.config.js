@@ -1,38 +1,51 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-export default {
-  mode: "production",
+export default (env = {}, argv = {}) => {
+  const isDevServer =
+    Boolean(env.WEBPACK_SERVE) ||
+    Boolean(argv.env?.WEBPACK_SERVE) ||
+    process.argv.some((argument) => argument.includes("serve"));
 
-  entry: "./src/index.js",
+  return {
+    mode: isDevServer ? "development" : "production",
 
-  output: {
-    filename: "main.js",
-    path: path.resolve(import.meta.dirname, "docs"),
-    publicPath: "",
-    clean: true,
-  },
+    entry: "./src/index.js",
 
-  devServer: {
-    watchFiles: ["./src/template.html"],
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/template.html",
-    }),
-  ],
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+    output: {
+      filename: "main.js",
+      path: path.resolve(import.meta.dirname, "docs"),
+      publicPath: "",
+      clean: {
+        keep: ".nojekyll",
       },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
+    },
+
+    devServer: {
+      watchFiles: ["./src/template.html"],
+    },
+
+    performance: {
+      hints: isDevServer ? false : "warning",
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/template.html",
+      }),
     ],
-  },
+
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
+        },
+      ],
+    },
+  };
 };
